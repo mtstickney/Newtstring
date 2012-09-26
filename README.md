@@ -7,9 +7,11 @@ Format
 ======
 The Newtstring format is identical to the [netstring] [djb_netstring] format 
 except for two minor changes:
+
 1. The length prefix is in hexadecimal. This makes it easy to check for 
 overflows of the platform's size type, and makes parsing and validation much 
 easier if the header has to be a fixed length.
+
 2. The trailing character is a newline (LF) instead of a comma. This makes logs 
 easier to read, since every new message starts on a new line, and plays nicely 
 with most terminals' line-buffering scheme.
