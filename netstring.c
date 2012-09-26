@@ -28,12 +28,10 @@ struct msg mk_msg(struct msg m) {
 	i = strlen(sz_buf);
 	memcpy(bufp, sz_buf, i);
 	bufp += i;
-	*bufp = ':';
-	bufp++;
+	*bufp++ = ':';
 	memcpy(bufp, m.buf, m.len);
 	bufp += m.len;
-	*bufp = '\n';
-	bufp++;
+	*bufp++ = '\n';
 	*bufp = '\0';
 
 	ret.len = alloc_sz;
